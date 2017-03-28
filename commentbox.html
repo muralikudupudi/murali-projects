@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+
+    .textbox{
+        background-color: #0099FF;
+        height:100px;
+        width:200px;
+        padding:5px;
+
+    }
+    .commentbox{
+        padding:5px;
+        background-color: cornsilk;
+
+    }
+ #container{
+     margin:10px;
+     padding:5px;
+
+ }
+
+
+
+</style>
+
+
+</head>
+<body>
+<div id="container">
+
+
+</div>
+<script type="text/babel">
+    var Comment = React.createClass({
+        edit : function(){
+alert('Commented edited successfully');
+
+        },
+        remove: function(){
+
+          alert('Commented removed successfully');
+        },
+
+        render: function(){
+
+          return (<div className="textbox">
+              <div className="commentbox">
+              <p>{this.props.children}</p>
+                  <button onClick={this.edit} className="button-primary"  >Edit</button>&nbsp;
+                  <button onClick={this.remove}  >Remove</button>
+              </div>
+              </div>);
+        }
+    });
+    ReactDOM.render(<div><Comment>Hey i am in first comment</Comment>
+    <Comment>Hey i am in second comment</Comment></div>,document.getElementById('container'));
+</script>
+
+
+</body>
+</html>

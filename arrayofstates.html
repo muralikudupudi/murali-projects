@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+
+
+    var App = React.createClass({
+        getInitialState:function(){
+            return {name:{fname:"murali",lname:"krishna",initial:"kudupudi"},
+                    age:"25",
+                    color:"white",
+                    gender:"male"};
+        },
+
+
+
+        render: function(){
+            return (<div>Hi your first name is  {this.state.name.fname}, and lastname is {this.state.name.lname} and surname is {this.state.name.initial}
+                        . You are {this.state.age} years old
+                        <p>Your Skin color is {this.state.color}</p>
+
+
+                    </div>
+            );
+        }
+
+    });
+
+    ReactDOM.render(<App />,document.getElementById('root'));
+</script>
+</html>

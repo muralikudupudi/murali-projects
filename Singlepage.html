@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://npmcdn.com/react-router@2.4.0/umd/ReactRouter.min.js"></script>
+
+
+
+        <link rel="stylesheet" type="text/css" href="singlepapgestyles.css">
+</head>
+
+<body>
+
+<div id="container">
+
+</div>
+
+<script type="text/babel">
+
+    var destination = document.querySelector("#container");
+    //root App component
+    var App = React.createClass({
+        render: function() {
+            return (
+                    <div>
+                        <h1>Simple SPA</h1>
+                        <ul className="header">
+
+                        </ul>
+                        <div className="content">
+                            <li>  <Home /></li>
+                            <Contact />
+                            <Stuff />
+                        </div>
+                    </div>
+            )
+        }
+    });
+    var Home = React.createClass({
+        render: function() {
+            return (
+                    <div>
+                        <h2>HELLO</h2>
+                        <p>Cras facilisis urna ornare ex volutpat, et
+                            convallis erat elementum. Ut aliquam, ipsum vitae
+                            gravida suscipit, metus dui bibendum est, eget rhoncus nibh
+                            metus nec massa. Maecenas hendrerit laoreet augue
+                            nec molestie. Cum sociis natoque penatibus et magnis
+                            dis parturient montes, nascetur ridiculus mus.</p>
+
+                        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+                    </div>
+            );
+        }
+    });
+    var Contact = React.createClass({
+        render: function() {
+            return (
+                    <div>
+                        <h2>GOT QUESTIONS?</h2>
+                        <p>The easiest thing to do is post on
+                            our <a href="http://forum.kirupa.com">forums</a>.
+                        </p>
+                    </div>
+            );
+        }
+    });
+
+    var Stuff = React.createClass({
+        render: function() {
+            return (
+                    <div>
+                        <h2>STUFF</h2>
+                        <p>Mauris sem velit, vehicula eget sodales vitae,
+                            rhoncus eget sapien:</p>
+                        <ol>
+                            <li>Nulla pulvinar diam</li>
+                            <li>Facilisis bibendum</li>
+                            <li>Vestibulum vulputate</li>
+                            <li>Eget erat</li>
+                            <li>Id porttitor</li>
+                        </ol>
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <ReactRouter.Router>
+                <ReactRouter.Route path="/" component={App}>
+                </ReactRouter.Route>
+            </ReactRouter.Router>
+       ,destination
+    );
+</script>
+</body>
+
+
+</html>
